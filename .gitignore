@@ -1,0 +1,12 @@
+bin/*
+!bin/.gitkeep
+build/*
+!build/.gitkeep
+install/*
+!install/.gitkeep
+log/*
+!log/.gitkeep
+src/*.o
+test/*.o
+.DS_Store
+.gitignore.swp
