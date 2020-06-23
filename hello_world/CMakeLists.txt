@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.5)
-project(ros2_my_package)
+project(hello_world)
 
 # Default to C++14
 if(NOT CMAKE_CXX_STANDARD)
