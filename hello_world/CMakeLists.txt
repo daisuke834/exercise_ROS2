@@ -14,15 +14,20 @@ find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(std_msgs REQUIRED)
 
-add_executable(my_publisher src/my_publisher.cc)
-ament_target_dependencies(my_publisher rclcpp std_msgs)
-
-add_executable(my_subscriber src/my_subscriber.cc)
-ament_target_dependencies(my_subscriber rclcpp std_msgs)
+add_executable(main
+  src/main.cc
+  src/my_publisher.cc
+  src/my_subscriber.cc
+)
+ament_target_dependencies(main rclcpp std_msgs)
+target_include_directories(main
+  PUBLIC
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+    $<INSTALL_INTERFACE:include>
+)
 
 install(TARGETS
-  my_publisher
-  my_subscriber
+  main
   DESTINATION lib/${PROJECT_NAME}
 )
 
